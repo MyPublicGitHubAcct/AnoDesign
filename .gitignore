@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Jupyter Notebook files
+src/*.ipynb_checkpoints
+
+# Other things
+*DS_Store
+
+# Pycharm
+*.idea
+
+# Virtual environments
+.venv

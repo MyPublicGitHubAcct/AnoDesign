@@ -1,0 +1,42 @@
+[project]
+name = "anodesign"
+version = "0.1.0"
+description = "Test environment for learning."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyterlab>=4.4.3",
+    "matplotlib>=3.10.3",
+    "numpy>=2.2.6",
+    "pandas>=2.2.3",
+    "pytest>=8.3.5",
+    "scipy>=1.15.3",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "N", "W"]
+#ignore = ["F401"]
+exclude = [
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".idea",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+]
