@@ -11,6 +11,8 @@ dependencies = [
     "pandas>=2.2.3",
     "pytest>=8.3.5",
     "scipy>=1.15.3",
+    "sounddevice>=0.5.2",
+    "soundfile>=0.13.1",
 ]
 
 [tool.ruff.lint]

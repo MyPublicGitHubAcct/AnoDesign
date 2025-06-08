@@ -8,6 +8,7 @@ wheels/
 
 # Jupyter Notebook files
 src/*.ipynb_checkpoints
+src/Scratch.ipynb
 
 # Other things
 *DS_Store

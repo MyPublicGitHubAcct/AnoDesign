@@ -20,6 +20,14 @@ in ```gen/GSOT1/Booknotes.md```.
 brew install uv
 ```
 
+
+### Run Jupyter Lab in the Browser
+
+```zsh
+uv run --with jupyter jupyter lab
+```
+
+
 ### Documentation
 
 - [Documentation](https://docs.astral.sh/uv/)
