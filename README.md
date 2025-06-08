@@ -21,6 +21,13 @@ brew install uv
 ```
 
 
+### Run a file
+
+```zsh
+uv run src/scratch.py
+```
+
+
 ### Run Jupyter Lab in the Browser
 
 ```zsh
