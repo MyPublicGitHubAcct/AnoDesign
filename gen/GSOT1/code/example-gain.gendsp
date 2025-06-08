@@ -1,0 +1,100 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 2,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 917.0, 469.0, 674.0, 937.0 ],
+		"gridsize" : [ 15.0, 15.0 ],
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 15.333333790302277, 24.666667401790619, 153.0, 22.0 ],
+					"text" : "in 1 @comment Frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 15.333333790302277, 107.333336532115936, 42.0, 22.0 ],
+					"text" : "* Gain"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 207.333339512348175, 24.666667401790619, 184.0, 22.0 ],
+					"text" : "param Gain 0. @min 0. @max 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 15.333333790302277, 63.333335220813751, 36.0, 22.0 ],
+					"text" : "cycle"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 15.333333790302277, 154.666671276092529, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+ ],
+		"originid" : "pat-10"
+	}
+
+}

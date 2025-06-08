@@ -1,4 +1,4 @@
-# Learning
+# AnoDesign
 
 
 Designs and testing, mainly in Python.
@@ -6,7 +6,8 @@ Designs and testing, mainly in Python.
 
 ## Book Notes
 
-TODO
+Notes for _Generating Sound & Organizing Time_ by Wakefield and Taylor can be found 
+in ```gen/GSOT1/Booknotes.md```.
 
 
 ## UV Notes
