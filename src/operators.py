@@ -3,6 +3,13 @@
 import numpy as np
 
 
+# Functions - no memory needed
+
+
+def latch() -> float:
+    pass
+
+
 # def modulo(val1, val2):
 #   # avoid division by 0
 #   if val2 == 0:
@@ -17,6 +24,17 @@ import numpy as np
 #     result += val2
 #
 #   return result
+
+def peek(buffer, channel: int, index: int) -> float:
+    """
+    Read values from a data/buffer object. The first argument should be a name of a data
+    or buffer object in the gen patcher. The second argument specifies the number of
+    output channels. The first inlet specifies a sample index to read
+    (no interpolation); indices out of range return zero. The last inlet specifies a
+    channel offset (default 0).
+    """
+    data = buffer.get_data()
+    return data[channel][index]
 
 
 def phase_wrap(angle):
@@ -63,7 +81,10 @@ def wrap(value=0, minimum=0, maximum=1):
         return ((value - minimum) % rng + rng) % rng + minimum
 
 
-class Accum:
+# Classes - memory needed
+
+
+class Accumulator:
     """
     The object adds to, and then outputs, an internal sum. This occurs at sample-rate,
     so the sum can grow very large, very fast. The value to be added is specified by
@@ -79,13 +100,14 @@ class Accum:
         self.max = maximum
 
     def get_current_value(self, value, reset) -> float:
-        if reset:
-            self.internal_value = 0
-            return 0
+        if reset != 0:
+            self.internal_value = self.min
+            return self.internal_value
         else:
             if value > self.max or value < self.min:
                 value = wrap(value, self.min, self.max)
             return self.internal_value + value
+
 
 
 class Buffer:
@@ -141,24 +163,3 @@ class History:
         out = self.last_value
         self.last_value = new_value
         return out
-
-
-class Peek:
-    """
-    Read values from a data/buffer object. The first argument should be a name of a data
-    or buffer object in the gen patcher. The second argument specifies the number of
-    output channels. The first inlet specifies a sample index to read
-    (no interpolation); indices out of range return zero. The last inlet specifies a
-    channel offset (default 0).
-    """
-
-    def __init__(self, buffer, num_out_chans):
-        self.buffer = buffer
-
-        if num_out_chans > len(buffer):
-            self.num_out_chans = len(buffer)
-        else:
-            self.num_out_chans = num_out_chans
-
-    def get_sample(self, chan: int, idx: int) -> float:
-        return self.buffer[chan][idx]

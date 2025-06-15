@@ -8,8 +8,14 @@
 [ -d /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/code ] || mkdir \
   /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/code
 
+[ -d /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/media ] || mkdir \
+  /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/media
+
 [ -d /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/patchers ] || mkdir \
   /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/patchers
+
+  [ -d /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/python ] || mkdir \
+  /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/python
 
 cp "$HOME/Documents/Max 9/Projects/GSOTTgenB1/Booknotes.md" \
 /Volumes/Develop/SourceControl/AnoDesign/gen/GSOT1/

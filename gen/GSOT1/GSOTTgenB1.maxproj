@@ -2,8 +2,8 @@
 	"name" : "GSOTTgenB1",
 	"version" : 1,
 	"creationdate" : 3815125654,
-	"modificationdate" : 3824935546,
-	"viewrect" : [ 0.0, 673.0, 300.0, 500.0 ],
+	"modificationdate" : 3832844565,
+	"viewrect" : [ 0.0, 459.0, 300.0, 500.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -29,10 +29,20 @@
 				"kind" : "patcher",
 				"local" : 1
 			}
+,
+			"g4b-005-Clock-Source.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
 
 		}
 ,
 		"code" : 		{
+			"bpm-sample-beat-slicer.gendsp" : 			{
+				"kind" : "gendsp",
+				"local" : 1
+			}
+,
 			"ano-phasor.gendsp" : 			{
 				"kind" : "gendsp",
 				"local" : 1

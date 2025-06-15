@@ -21,6 +21,16 @@ To run only the tests in this file, do this:
 #     assert res == 0.9
 
 
+class TestPeek:
+    def test_peek_get_second_sample_in_first_channel(self, new_peek_buffer):
+        res = operators.peek(new_peek_buffer, 0, 1)
+        assert res == 0.05
+
+    def test_peek_get_first_sample_in_second_channel(self, new_peek_buffer):
+        res = operators.peek(new_peek_buffer, 1, 0)
+        assert res == 0.01
+
+
 class TestPhaseWrap:
     def test_phase_wrap_within(self):
         res1 = operators.phase_wrap(2.516)
@@ -56,11 +66,16 @@ class TestWrap:
 
 # --- Classes ---
 
-# class TestAccum:
-#
-#   def test_accum(self, new_accum):
-#     res = new_accum.get_current_value(4, 1)
-#     assert res == 3
+
+class TestAccumulator:
+
+  def test_accumulator_no_reset(self, new_accumulator):
+    res = new_accumulator.get_current_value(4, 0)
+    assert res == 9
+
+  def test_accumulator_with_reset(self, new_accumulator):
+    res = new_accumulator.get_current_value(4, 1)
+    assert res == 0
 
 
 class TestBuffer:
@@ -89,13 +104,3 @@ class TestHistory:
         next_res = new_history.get_last_value(5)
         assert res == 3
         assert next_res == 4
-
-
-class TestPeek:
-    def test_peek_get_second_sample_in_first_channel(self, new_peek_buffer):
-        res = new_peek_buffer.get_sample(0, 1)
-        assert res == 0.05
-
-    def test_peek_get_third_sample_in_second_channel(self, new_peek_buffer):
-        res = new_peek_buffer.get_sample(1, 1)
-        assert res == 0.02
