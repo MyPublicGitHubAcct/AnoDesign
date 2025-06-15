@@ -25,6 +25,7 @@ def latch() -> float:
 #
 #   return result
 
+
 def peek(buffer, channel: int, index: int) -> float:
     """
     Read values from a data/buffer object. The first argument should be a name of a data
@@ -107,7 +108,6 @@ class Accumulator:
             if value > self.max or value < self.min:
                 value = wrap(value, self.min, self.max)
             return self.internal_value + value
-
 
 
 class Buffer:

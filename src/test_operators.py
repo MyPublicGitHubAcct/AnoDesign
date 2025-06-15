@@ -68,14 +68,13 @@ class TestWrap:
 
 
 class TestAccumulator:
+    def test_accumulator_no_reset(self, new_accumulator):
+        res = new_accumulator.get_current_value(4, 0)
+        assert res == 9
 
-  def test_accumulator_no_reset(self, new_accumulator):
-    res = new_accumulator.get_current_value(4, 0)
-    assert res == 9
-
-  def test_accumulator_with_reset(self, new_accumulator):
-    res = new_accumulator.get_current_value(4, 1)
-    assert res == 0
+    def test_accumulator_with_reset(self, new_accumulator):
+        res = new_accumulator.get_current_value(4, 1)
+        assert res == 0
 
 
 class TestBuffer:
