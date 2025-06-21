@@ -30,10 +30,20 @@ Using a phasor to move around sample playback (_bpm-sample-loop.gendsp_) and a b
 
 ### A phasor as a clock source
 
-g4b-005-Clock-Source.maxpat
+__g4b-005-Clock-Source.maxpat__ includes a clock source made with a simple ramp whose speed is defined as (integer) BPM / 60.
+
+_Ramp multiplication_ can be used to derive multiple, related clocks (subdivisions such as measures, beats, polyrhythms, ratchets, etc.) from a common source. Multiplying by a number smaller than one will restrict time vertically (increasing the rate, or slope of the ramp), whereas multiplying by a number larger than one will stretch time.
+
+One negative of this method is that the subdivisions will reset once the clock source goes back to zero.
+
+__Note__: _Ratcheting_ is splitting a single pulse into more than on equal parts.  This is often used with probability to create an effect often heard in, for example, Tangerine Dream's early work. Examples [here](https://youtu.be/ntjE9EguxO0?si=43a3nFV3nDiGi3ms).
 
 
-# ---------------------- STOPPED AT PAGE 31 ----------------------
+
+
+
+
+# ---------------------- STOPPED AT PAGE 40 ----------------------
 
 
 ## Python environment
