@@ -21,6 +21,21 @@ brew install uv
 ```
 
 
+### Upgrade Homebrew
+
+```zsh
+brew update
+```
+
+
+### Upgrade Homebrew packages
+
+```zsh
+brew outdated          # check for outdated packages
+brew upgrade <formula> # update one package, or leave out formula for all
+```
+
+
 ### Run a file
 
 ```zsh

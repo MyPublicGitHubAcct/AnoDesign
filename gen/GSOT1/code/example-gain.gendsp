@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -19,8 +19,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.333333790302277, 24.666667401790619, 153.0, 22.0 ],
-					"text" : "in 1 @comment Frequency"
+					"patching_rect" : [ 15.333333790302277, 24.666667401790619, 286.0, 22.0 ],
+					"text" : "in 1 @comment Frequency 1 @min 1 @ max 22000"
 				}
 
 			}
@@ -31,7 +31,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.333333790302277, 107.333336532115936, 42.0, 22.0 ],
+					"patching_rect" : [ 15.20000022649765, 123.200001835823059, 42.0, 22.0 ],
 					"text" : "* Gain"
 				}
 
@@ -43,7 +43,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 207.333339512348175, 24.666667401790619, 184.0, 22.0 ],
+					"patching_rect" : [ 316.000004708766937, 24.666667401790619, 184.0, 22.0 ],
 					"text" : "param Gain 0. @min 0. @max 1."
 				}
 
@@ -55,7 +55,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 15.333333790302277, 63.333335220813751, 36.0, 22.0 ],
+					"patching_rect" : [ 15.20000022649765, 79.200001180171967, 36.0, 22.0 ],
 					"text" : "cycle"
 				}
 
@@ -66,7 +66,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.333333790302277, 154.666671276092529, 35.0, 22.0 ],
+					"patching_rect" : [ 15.20000022649765, 171.200002551078796, 35.0, 22.0 ],
 					"text" : "out 1"
 				}
 
@@ -93,8 +93,7 @@
 				}
 
 			}
- ],
-		"originid" : "pat-10"
+ ]
 	}
 
 }

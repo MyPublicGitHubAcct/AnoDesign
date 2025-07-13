@@ -6,10 +6,6 @@ import numpy as np
 # Functions - no memory needed
 
 
-def latch() -> float:
-    pass
-
-
 # def modulo(val1, val2):
 #   # avoid division by 0
 #   if val2 == 0:
@@ -147,6 +143,35 @@ class Buffer:
         return self.buffer_data
 
 
+class Counter:
+    """
+    Accumulates and outputs a stored count, similarly to Max's counter object, but
+    triggered at sample-rate. The amount to accumulate per sample is set by the first
+    input (incr). The count can be reset by a non-zero value in the second input
+    (reset). The third inlet (max) sets a maximum value; the counter will wrap if it
+    reaches this value. However, if the maximum value is set to 0 (the default), the
+    counter will assume no limit and count indefinitely. The first outlet outputs the
+    current count, the second outlet outputs 1 when the count wraps at the maximum and
+    zero otherwise, and the third outlet outputs the number of wraps (the carry count).
+    """
+
+    def __init__(self, incr: int, max_m: int):
+        self.incr = incr
+        self.max_m = max_m
+        self.current = 0
+
+        if incr < 1:
+            self.inc = 1
+
+    def increment(self, restart: int):
+        self.current = 0 if restart > 0 else self.current + self.incr
+        self.current = 0 if self.current > self.max_m else self.current
+
+    def get_count(self, restart: int) -> int:
+        self.increment(restart)
+        return self.current
+
+
 class History:
     """
     The history operator allows feedback in the gen patcher through the insertion of a
@@ -163,3 +188,24 @@ class History:
         out = self.last_value
         self.last_value = new_value
         return out
+
+
+class Latch:
+    """
+    Conditionally passes or holds input. The first inlet is the 'input' and the second
+    inlet is the 'control'. When the control is non-zero, the input value is passed
+    through. When the control is zero, the previous input value is output. It can be
+    used to periodically sample & hold a source signal with a simpler trigger logic than
+    the sah operator.
+    """
+
+    def __init__(self):
+        self.last_value = 0.0
+
+    def process(self, new_value, control: float):
+        if control != 0.0:
+            self.last_value = new_value
+            return new_value
+        else:
+            return self.last_value
+

@@ -97,9 +97,36 @@ class TestBuffer:
         assert res2 == "[0.04 0.05 0.06]"
 
 
+class TestCounter:
+    def test_counter_get_next_value_add_one(self, new_counter_10):
+        res = new_counter_10.get_count(0)
+        next_res = new_counter_10.get_count(0)
+        assert res == 1
+        assert next_res == 2
+
+    def test_counter_get_next_value_flip(self, new_counter_8):
+        res = None
+        for i in range(8):
+            res = new_counter_8.get_count(0)
+            print(str(i) + " , " + str(res))
+        assert res == 0
+
+
 class TestHistory:
     def test_history_get_last_value(self, new_history):
         res = new_history.get_last_value(4)
         next_res = new_history.get_last_value(5)
         assert res == 3
         assert next_res == 4
+
+
+class TestLatch:
+    def test_latch_pass_next_value(self, new_latch):
+        res = new_latch.process(0.432, 0.2)
+        assert res == 0.432
+
+    def test_latch_stop_next_value(self, new_latch):
+        new_latch.process(0.482, 0.2)
+        new_latch.process(0.523, 0.2)
+        res = new_latch.process(0.5, 0.0)
+        assert res == 0.523

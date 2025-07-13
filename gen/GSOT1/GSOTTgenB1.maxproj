@@ -2,8 +2,8 @@
 	"name" : "GSOTTgenB1",
 	"version" : 1,
 	"creationdate" : 3815125654,
-	"modificationdate" : 3833383955,
-	"viewrect" : [ 8.0, 455.0, 300.0, 500.0 ],
+	"modificationdate" : 3834586237,
+	"viewrect" : [ 11.0, 462.0, 299.0, 755.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -33,6 +33,16 @@
 			"g4b-005-Clock-Source.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
+			}
+,
+			"g4b-006-Ramp-To-Steps.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/Max 9/Projects/GSOTTgenB1/patchers",
+					"projectrelativepath" : "./patchers"
+				}
+
 			}
 
 		}
@@ -64,6 +74,16 @@
 			}
 ,
 			"bpm.gendsp" : 			{
+				"kind" : "gendsp",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/Max 9/Projects/GSOTTgenB1/code",
+					"projectrelativepath" : "./code"
+				}
+
+			}
+,
+			"ramp-to-steps.gendsp" : 			{
 				"kind" : "gendsp",
 				"local" : 1,
 				"singleton" : 				{

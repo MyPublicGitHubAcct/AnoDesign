@@ -7,6 +7,7 @@ From _Generating Sound & Organizing Time_ by Wakefield and Taylor.
 Other sources:
 
 - [gen documentation](https://docs.cycling74.com/userguide/gen/_gen_overview/)
+- [gen for beginners](https://cycling74.com/tutorials/gen~-for-beginners-part-1-a-place-to-start)
 - [gen operator descriptions](https://docs.cycling74.com/userguide/gen/gen~_operators/)
 - [gen video tutorials](https://cycling74.com/tutorials/gen-video-tutorial-series)
 - [pytest](https://emimartin.me/pytest_best_practices)
@@ -39,11 +40,17 @@ One negative of this method is that the subdivisions will reset once the clock s
 __Note__: _Ratcheting_ is splitting a single pulse into more than on equal parts.  This is often used with probability to create an effect often heard in, for example, Tangerine Dream's early work. Examples [here](https://youtu.be/ntjE9EguxO0?si=43a3nFV3nDiGi3ms).
 
 
+### Ramps to Steps
+
+If a ramp is run through a _floor_ operator, it will split the ramp into a step function (0 or 1).
 
 
+### Phase Rotation
+
+Delaying the phase of a ramp can be accomplished by subtracting an amount (presumably 0 to 1) from the ramp and wrapping the result to be between 0 and 1. As phase is a circular concept, the result can be viewed as, for example, 25% delayed or 75% ahead. 
 
 
-# ---------------------- STOPPED AT PAGE 40 ----------------------
+# ---------------------- STOPPED AT PAGE 41 ----------------------
 
 
 ## Python environment
