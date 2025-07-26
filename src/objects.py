@@ -30,7 +30,7 @@ class GainControl:
     def process_block(self, block: np.ndarray) -> np.ndarray:
         out = np.zeros_like(block)
         for i in range(len(block)):
-            out[i] = self.process_sample(block[i])
+            out[i] = self.process_sample(float(block[i]))
         return out
 
 
