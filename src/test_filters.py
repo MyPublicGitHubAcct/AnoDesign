@@ -1,4 +1,4 @@
-import filters
+from filters import DcBlock
 import numpy as np
 import pytest
 
@@ -9,7 +9,7 @@ To run all tests, type pytest at top level like:
     pytest
 
 To run only the tests in this file, do this:
-    pytest -q python/test_filters.py
+    pytest -q src/test_filters.py
 """
 
 
@@ -20,7 +20,7 @@ class TestDcBlock:
         dc_offset = 1.0
         signal = np.sin(2 * np.pi * 440 * t) + dc_offset
 
-        dc_filter = filters.DcBlock()
+        dc_filter = DcBlock()
         filtered = dc_filter.process_block(signal)
         out = filtered[14000:]
         print(str(np.mean(out)))

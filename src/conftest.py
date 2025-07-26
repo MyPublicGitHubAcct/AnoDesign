@@ -2,6 +2,7 @@ import pytest
 import numpy as np
 from scipy import signal as sg
 from operators import Accumulator, Buffer, Counter, History, Latch
+from objects import GainControl
 from filters import DcBlock
 # from waveforms import Phasor
 
@@ -59,3 +60,20 @@ def new_wrap_expectations():
         (3.0, 3.0, 7.0, 3.0),
         (7.0, 3.0, 7.0, 3.0),
     ]
+
+@pytest.fixture
+def set_of_100_zeros():
+    return np.zeros(100, dtype=np.float32)
+
+@pytest.fixture
+def set_of_100_ones():
+    return np.ones(100, dtype=np.float32)
+
+@pytest.fixture
+def default_gain_control():
+    return GainControl(initial_gain=1.0)
+
+@pytest.fixture
+def sample_block():
+    return np.ones(10, dtype=np.float32)
+

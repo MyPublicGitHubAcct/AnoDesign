@@ -8,7 +8,7 @@ To run all tests, type pytest at top level like:
     pytest
 
 To run only the tests in this file, do this:
-    pytest -q python/test_operators.py
+    pytest -q src/test_operators.py
 """
 
 
