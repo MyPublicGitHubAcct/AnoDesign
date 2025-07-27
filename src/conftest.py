@@ -70,7 +70,7 @@ def set_of_100_ones():
     return np.ones(100, dtype=np.float32)
 
 @pytest.fixture
-def default_gain_control():
+def gain_control():
     return GainControl(initial_gain=1.0)
 
 @pytest.fixture
